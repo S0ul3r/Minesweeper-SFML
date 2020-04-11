@@ -90,10 +90,10 @@ void MSSFMLView::handleEvent(){
 		t.loadFromFile("src/images/win.jpg");
 		sf::Sprite s(t);
 		window.draw(s);
-	}else if(board->state == GameState::FINISHED_LOSS){
-		t.loadFromFile("src/images/lose.jpg");
-		sf::Sprite s(t);
-		window.draw(s);
-		Sleep(1000);
+	// }else if(board->state == GameState::FINISHED_LOSS){
+	// 	t.loadFromFile("src/images/lose.jpg");
+	// 	sf::Sprite s(t);
+	// 	window.draw(s);
+	// 	Sleep(1000);
 	}
 }

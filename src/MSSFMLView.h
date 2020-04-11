@@ -6,6 +6,7 @@ class MSSFMLView
 {
     minesweeperBoard* board;
     sf::Texture t;
+    sf::Texture winSource;
 
     void drawField(int x, int y);
 public:
