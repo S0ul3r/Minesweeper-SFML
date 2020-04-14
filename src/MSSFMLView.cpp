@@ -2,14 +2,14 @@
 #include "MSTextController.h"
 #include "MSSFMLView.h"
 
-#include <windows.h>
-
+//Constructor
 MSSFMLView::MSSFMLView(minesweeperBoard& board) {
 	this->board = &board;
 	t.loadFromFile("src/images/tiles.jpg");
 	window.create(sf::VideoMode(32*this->board->getBoardWidth(), 32*this->board->getBoardHeight()), "Minesweeper");
 }
 
+//Drawing fields depending what is their state
 void MSSFMLView::drawField(int x, int y) {
 	char c = board->getFieldInfo(x, y);
 	int cellSize = 32;
@@ -28,6 +28,7 @@ void MSSFMLView::drawField(int x, int y) {
 	window.draw(cell);
 }
 
+//Drawing whole board
 void MSSFMLView::render() {
 	for (int i = 0; i < board->getBoardWidth(); i++){
 		for (int j = 0; j < board->getBoardHeight(); j++){
@@ -36,12 +37,14 @@ void MSSFMLView::render() {
 	}
 }
 
+//Cleaning up and displaying board
 void MSSFMLView::display(){
 	window.clear();
 	render();
 	window.display();
 }
 
+//Handling events LMB and RMB
 void MSSFMLView::handleEvent(){
 	sf::Event e;
 	while(window.pollEvent(e))

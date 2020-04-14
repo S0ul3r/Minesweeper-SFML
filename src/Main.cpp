@@ -11,6 +11,5 @@ int main()
 		view.handleEvent();
 		view.display();
 	}
-
 	return 0;
 }
