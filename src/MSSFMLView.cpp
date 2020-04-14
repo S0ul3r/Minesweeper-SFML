@@ -40,7 +40,6 @@ void MSSFMLView::display(){
 	window.clear();
 	render();
 	window.display();
-
 }
 
 void MSSFMLView::handleEvent(){
@@ -86,14 +85,21 @@ void MSSFMLView::handleEvent(){
 			}
 
 		}
+
+	// Pictures for WIN/LOSE
 	if(board->state == GameState::FINISHED_WIN){
-		t.loadFromFile("src/images/win.jpg");
-		sf::Sprite s(t);
-		window.draw(s);
-	// }else if(board->state == GameState::FINISHED_LOSS){
-	// 	t.loadFromFile("src/images/lose.jpg");
-	// 	sf::Sprite s(t);
-	// 	window.draw(s);
-	// 	Sleep(1000);
+		// t.loadFromFile("src/images/win.jpg");
+		// sf::Sprite s(t);
+		// s.scale(32*this->board->getBoardWidth(),32*this->board->getBoardHeight());
+		// window.draw(s);
+		// Sleep(1000);
+		// window.clear();
+	}else if(board->state == GameState::FINISHED_LOSS){
+		// t.loadFromFile("src/images/lose.jpg");
+		// sf::Sprite s(t);
+		// s.scale(32*this->board->getBoardWidth(),32*this->board->getBoardHeight());
+		// window.draw(s);
+		// Sleep(1000);
+		// window.clear();
 	}
 }

@@ -9,10 +9,10 @@ class MSSFMLView
     sf::Texture winSource;
 
     void drawField(int x, int y);
+    void render();
 public:
     sf::RenderWindow window;
     MSSFMLView(minesweeperBoard&);
-    void render();
     void display();
     void handleEvent();
 };
